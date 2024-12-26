@@ -14,14 +14,7 @@ public class Leetcode2872 {
     }
     public int solution(int n, int[][] edges, int[] values, int k) {
         Map<Integer, List<Integer>> adjList = new HashMap<>();
-        for (int[] edge : edges) {
-            List<Integer> temp = adjList.getOrDefault(edge[0], new ArrayList<>());
-            temp.add(edge[1]);
-            adjList.put(edge[0],temp);
-            temp = adjList.getOrDefault(edge[1], new ArrayList<>());
-            temp.add(edge[0]);
-            adjList.put(edge[1],temp);
-        }
+        Leetcode3203.createAdjMapOfList(edges, adjList);
 
         sol(0, -1, adjList, values,k);
         return ans;
