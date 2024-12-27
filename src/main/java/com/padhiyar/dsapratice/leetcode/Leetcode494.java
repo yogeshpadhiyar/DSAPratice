@@ -37,7 +37,7 @@ public class Leetcode494 {
     }
 
     // use 1000 plus to avoid negative index
-    private int dpTargetSum(int[] nums, int target, int i, int[][] dp) {
+    public int dpTargetSum(int[] nums, int target, int i, int[][] dp) {
         if(i == nums.length) {
             return target == 0 ? 1 : 0;
         }
